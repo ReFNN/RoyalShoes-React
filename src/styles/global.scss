@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+:root {
+    --primary: #00B37E;
+    --background: #121214;
+    --text: #FFF;
+    --caption: #8D8D99;
+    --gray: #E1E1E6;
+    --background-light: rgba(34, 65, 33, 0.301);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    // overflow-x: hidden;
+  }
+  
+  body {
+    background-image: url(../assets/imgs/BackgroundBody/background-login.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--text);
+  
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  button {
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+  }

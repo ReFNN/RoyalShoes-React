@@ -1,0 +1,38 @@
+.container{
+    width: 100%;
+    height: fit-content;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logoHeader {
+    width: 100%;
+    height: 200px;
+    background-image: url(../../assets/imgs/HeaderMenu/background-header.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar{
+    width: 100%;
+    height: 50px;
+
+    background-color: #FFB000;
+    border-bottom: 5px solid #61005e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.right-navigation{
+    width: max-content;
+    height: 50px;
+    float: right;
+}

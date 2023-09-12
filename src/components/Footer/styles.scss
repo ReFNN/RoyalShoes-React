@@ -1,0 +1,43 @@
+.footerContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-inline: 10%;
+    padding-block: 15px;
+
+    background-color: #3f003f;
+    border-top: #61005e solid 5px;
+
+    .aboutmeContainer {
+        width: 40%;
+
+        h3 {
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    }
+
+    .linksContainer {
+        width: 35%;
+
+        li {
+            list-style: none;
+        }
+        a {
+            color: rgb(211, 211, 211);
+            text-decoration: none;
+        }
+    }
+}
+
+.copyrightContainer {
+    background-color: #FFB000;
+    padding-left: 30px;
+
+    a{
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        font-size: 14px;
+    }
+}

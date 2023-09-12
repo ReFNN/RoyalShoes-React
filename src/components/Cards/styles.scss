@@ -1,0 +1,242 @@
+$c_0: #000000;
+
+.l-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-inline: 10%;
+    margin-block: 50px;
+    gap: 50px;
+
+}
+  
+.b-game-card {
+    position: relative;
+    // z-index: 1;
+    width: 260px;
+    height: 360px;
+    background-color: #210033;
+    perspective: 1000px;
+
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: -5px 5px #80007b;
+    
+    .bgImage{
+        position: absolute;
+        height: 360px;
+        width: 100%;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: default;
+
+        img{
+            width: 100%;
+            scale: 0.9;
+            position: absolute;
+            top: 25%;
+            z-index: 1;
+            filter: drop-shadow(0rem 0rem 0.5rem #5f0057);
+            
+            transition: 0.9s all;
+        }
+
+        &:hover img{
+            scale: 1;
+            top: 23%;
+        } 
+
+        span{
+            position: absolute;
+            bottom: 6%;
+            font-family: 'Qwitcher Grypen', cursive;
+            font-size: 60px;
+            opacity: 30%;
+            background: linear-gradient(180deg, rgba(255,255,255,1) 59%, rgb(255, 215, 129) 0%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            transition: 0.9s all;
+        }
+
+        &:hover span{
+            bottom: 12%;
+        } 
+    }
+
+    &__cover {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      overflow: hidden;
+    //   background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    //   background-size: cover;
+      perspective-origin: 50% 50%;
+      transform-style: preserve-3d;
+      transform-origin: top center;
+      will-change: transform;
+      transform: skewX(.001deg);
+      transition: transform .35s ease-in-out;
+      
+      // Gloss 
+      
+      &::after {
+        display: block;
+        content: '';
+        position: absolute;
+        z-index: -100;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 120%;
+        background: linear-gradient(226deg, rgba(64, 19, 78, 0.4) 0%, rgba(176, 52, 214, 0.4) 35%, rgba(203, 70, 255, 0.2) 42%, rgba(179, 87, 255, 0) 60%);
+        transform: translateY(-20%);
+        will-change: transform;
+        transition: transform .65s cubic-bezier(0.18, 0.9, 0.58, 1);
+      }
+      
+    }
+    
+    &:hover &__cover {
+      transform: rotateX(7deg) translateY(-6px);
+  
+      &::after {
+        transform: translateY(0%);
+      }
+      
+    }
+    
+    // Shadows
+    
+    &::before {
+      display: block;
+      content: '';
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      width: 90%;
+      height: 90%;
+      background: rgba($c_0, 0.5);
+      box-shadow: 0 6px 12px 12px rgba($c_0, 0.4);
+      will-change: opacity;
+      transform-origin: top center;
+      transform: skewX(.001deg);
+      transition: transform .35s ease-in-out, opacity .5s ease-in-out;
+    }
+    
+    &:hover::before {
+      opacity: 0.6;
+      transform: rotateX(7deg) translateY(-6px) scale(1.05);
+    }
+}
+
+.topCard{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    margin-top: 10px;
+    .titleCard{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 25px;
+        margin-block: 10px;
+
+        background: -webkit-linear-gradient(90deg, rgba(255,255,255,1) 53%, rgba(255,176,0,1) 0%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        &::before {
+            display: block;
+            content: '';
+            position: absolute;
+            top: 38px;
+            width: 190px;
+            height: 1px;
+            background: #ffae0081;
+          }
+    }
+
+    
+
+    
+    .priceCard {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 25px;
+
+        background: -webkit-linear-gradient(90deg, rgba(255,176,0,1) 0%, rgba(255,255,255,1) 70%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.botCard{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    bottom: -100px;
+    width: 100%;
+    height: 40px;
+    transition: 0.8s all;
+    padding-left: 4px;
+    
+    .b-game-card__cover:hover &{
+        bottom: 0;
+    } 
+    
+    .buyButton{
+        display: flex;
+        width: 80%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        background-color: #FFB000;
+
+        text-decoration: none;
+        color: #210033;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+
+        &:hover {
+            text-shadow: 0rem 0rem 0.5rem #ffee00;
+        }
+    }
+
+    .cartIcon{
+        position: relative;
+        display: flex;
+        width: 20%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffae00cc;
+
+        text-decoration: none;
+        color: #210033;
+        font-family: 'Poppins', sans-serif;
+
+        &:hover {
+            text-shadow: 0rem 0rem 0.5rem #ffe600;
+        }
+    }
+}
+
+
